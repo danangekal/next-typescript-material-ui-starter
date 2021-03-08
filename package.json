@@ -1,15 +1,15 @@
 {
-  "name": "next-typescript-material-ui-stater",
+  "name": "next-typescript-material-ui-starter",
   "version": "0.1.0",
-  "description": "Unofficial Next.js + Typescript + Material UI stater with a latest package",
+  "description": "Unofficial Next.js + Typescript + Material UI starter with a latest package",
   "author": "Danang Eko Alfianto <github.com/danangekal>",
-  "homepage": "https://github.com/danangekal/next-typescript-material-ui-stater#readme",
+  "homepage": "https://github.com/danangekal/next-typescript-material-ui-starter#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/danangekal/next-typescript-material-ui-stater.git"
+    "url": "git+https://github.com/danangekal/next-typescript-material-ui-starter.git"
   },
   "bugs": {
-    "url": "https://github.com/danangekal/next-typescript-material-ui-stater/issues"
+    "url": "https://github.com/danangekal/next-typescript-material-ui-starter/issues"
   },
   "license": "MIT",
   "keywords": [

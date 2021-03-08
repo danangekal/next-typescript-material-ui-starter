@@ -5,7 +5,7 @@ FROM node:$VERSION
 # Set label maintainer, version & description
 LABEL maintainer="danangekal@gmail.com"
 LABEL version="0.1.0"
-LABEL description="Unofficial Next.js + Typescript + Material UI stater with a latest package"
+LABEL description="Unofficial Next.js + Typescript + Material UI starter with a latest package"
 
 # Set working directory
 WORKDIR /app
