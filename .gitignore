@@ -32,3 +32,10 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# package lock
+package-lock.json
+
+# PWA
+public/sw.js
+public/workbox*
