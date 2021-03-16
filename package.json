@@ -18,6 +18,7 @@
     "typescript",
     "material-ui",
     "docker",
+    "pwa",
     "eslint",
     "prettier",
     "husky",
