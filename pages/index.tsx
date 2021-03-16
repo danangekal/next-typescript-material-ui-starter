@@ -72,10 +72,24 @@ const useStyles = makeStyles((theme: Theme) => ({
 export default function Home() {
   const classes = useStyles();
   return (
-    <Box minHeight="100vh" padding="0 0.5rem" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
+    <Box
+      minHeight="100vh"
+      padding="0 0.5rem"
+      display="flex"
+      flexDirection="column"
+      justifyContent="center"
+      alignItems="center"
+    >
       <Nav />
 
-      <Box padding="5rem 0" display="flex" flex="1" flexDirection="column" justifyContent="center" alignItems="center">
+      <Box
+        padding="5rem 0"
+        display="flex"
+        flex="1"
+        flexDirection="column"
+        justifyContent="center"
+        alignItems="center"
+      >
         <Typography variant="h2" component="h1" className={classes.title}>
           Welcome to
           {' '}
@@ -97,28 +111,46 @@ export default function Home() {
           <code>pages/index.tsx</code>
         </Typography>
 
-        <Box maxWidth="800px" marginTop="3rem" display="flex" justifyContent="center" alignItems="center" flexWrap="wrap" className={classes.grid}>
+        <Box
+          maxWidth="800px"
+          marginTop="3rem"
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          flexWrap="wrap"
+          className={classes.grid}
+        >
           <a href="https://nextjs.org/docs">
-            <Typography variant="h4" component="h3">Documentation &rarr;</Typography>
-            <Typography variant="body2" component="p">Find in-depth information about Next.js features and API.</Typography>
+            <Typography variant="h4" component="h3">
+              Documentation &rarr;
+            </Typography>
+            <Typography variant="body2" component="p">
+              Find in-depth information about Next.js features and API.
+            </Typography>
           </a>
 
           <a href="https://nextjs.org/learn">
-            <Typography variant="h4" component="h3">Learn &rarr;</Typography>
-            <Typography variant="body2" component="p">Learn about Next.js in an interactive course with quizzes!</Typography>
+            <Typography variant="h4" component="h3">
+              Learn &rarr;
+            </Typography>
+            <Typography variant="body2" component="p">
+              Learn about Next.js in an interactive course with quizzes!
+            </Typography>
           </a>
 
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-          >
-            <Typography variant="h4" component="h3">Examples &rarr;</Typography>
-            <Typography variant="body2" component="p">Discover and deploy boilerplate example Next.js projects.</Typography>
+          <a href="https://github.com/vercel/next.js/tree/master/examples">
+            <Typography variant="h4" component="h3">
+              Examples &rarr;
+            </Typography>
+            <Typography variant="body2" component="p">
+              Discover and deploy boilerplate example Next.js projects.
+            </Typography>
           </a>
 
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          >
-            <Typography variant="h4" component="h3">Deploy &rarr;</Typography>
+          <a href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app">
+            <Typography variant="h4" component="h3">
+              Deploy &rarr;
+            </Typography>
             <Typography variant="body2" component="p">
               Instantly deploy your Next.js site to a public URL with Vercel.
             </Typography>
@@ -126,7 +158,15 @@ export default function Home() {
         </Box>
       </Box>
 
-      <Box width="100%" height="100px" borderTop="1px solid #eaeaea" display="flex" justifyContent="center" alignItems="center" className={classes.footer}>
+      <Box
+        width="100%"
+        height="100px"
+        borderTop="1px solid #eaeaea"
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        className={classes.footer}
+      >
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
           target="_blank"

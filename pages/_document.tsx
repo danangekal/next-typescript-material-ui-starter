@@ -1,6 +1,10 @@
 import { Children } from 'react';
 import Document, {
-  DocumentContext, Html, Head, Main, NextScript,
+  DocumentContext,
+  Html,
+  Head,
+  Main,
+  NextScript,
 } from 'next/document';
 import { ServerStyleSheets } from '@material-ui/core';
 
@@ -18,7 +22,10 @@ class MyDocument extends Document {
     return {
       ...initialProps,
       // Styles fragment is rendered after the app and page rendering finish.
-      styles: [...Children.toArray(initialProps.styles), sheets.getStyleElement()],
+      styles: [
+        ...Children.toArray(initialProps.styles),
+        sheets.getStyleElement(),
+      ],
     };
   }
 
