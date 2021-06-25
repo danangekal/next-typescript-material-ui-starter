@@ -1,21 +1,23 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Demo
+
 You can check [demo](https://next-typescript-material-ui-starter.vercel.app/)
 
 ## Features
 
 - [React.js 17](https://reactjs.org/blog/2020/10/20/react-v17.html) - Blog introduce react v17.0.
-- [Next.js 10](https://nextjs.org/blog/next-10) - Blog introduce next.js 10.
+- [Next.js 11](https://nextjs.org/blog/next-11) - Blog introduce next.js 11.
 - [Typescript 4](https://www.typescriptlang.org/) - Documentation of typescript.
 - [Material UI 4](https://material-ui.com/) - Documentation of material ui.
 - [Docker](https://docs.docker.com/) - Documentation of Docker.
 - [Eslint 7](https://eslint.org/docs/user-guide/getting-started) - Documentation of eslint.
 - [Prettier 2](https://prettier.io/docs/en/index.html) - Documentation of prettier.
-- [Husky 5](https://typicode.github.io/husky/#/) - Documentation of husky.
-- [Lint Staged 10](https://github.com/okonet/lint-staged) - Documentation of lint staged.
+- [Husky 6](https://typicode.github.io/husky/#/) - Documentation of husky.
+- [Lint Staged 11](https://github.com/okonet/lint-staged) - Documentation of lint staged.
 
 ## Usage
+
 This project using node >= 12.13.0 & yarn
 
 ### Installation
@@ -47,21 +49,25 @@ You can start editing the page by modifying `pages/index.tsx`. The page auto-upd
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
 #### Docker Build
+
 ```bash
 docker build -t next-typescript-material-ui-starter .
 ```
 
 #### Docker Run
+
 ```bash
 docker run --rm -it -p 3000:3000 next-typescript-material-ui-starter
 ```
 
 #### Docker Compose
+
 ```bash
 docker-compose up
 ```
 
 #### Docker Images
+
 You can use images available on docker hub [next-typescript-material-ui-starter](https://hub.docker.com/r/danangekal/next-typescript-material-ui-starter).
 
 ```bash

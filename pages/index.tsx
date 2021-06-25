@@ -1,8 +1,7 @@
-import {
-  makeStyles, Theme, Box, Typography,
-} from '@material-ui/core';
+import Image from 'next/image';
+import { makeStyles, Theme, Box, Typography } from '@material-ui/core';
 
-import Nav from '../components/nav';
+import Nav from 'components/nav';
 
 const useStyles = makeStyles((theme: Theme) => ({
   title: {
@@ -62,10 +61,6 @@ const useStyles = makeStyles((theme: Theme) => ({
       justifyContent: 'center',
       alignItems: 'center',
     },
-    '& img': {
-      height: '1em',
-      marginLeft: '0.5rem',
-    },
   },
 }));
 
@@ -91,9 +86,7 @@ export default function Home() {
         alignItems="center"
       >
         <Typography variant="h2" component="h1" className={classes.title}>
-          Welcome to
-          {' '}
-          <a href="https://nextjs.org">Next.js</a>
+          Welcome to <a href="https://nextjs.org">Next.js</a>
           {' + '}
           <a
             href="https://www.typescriptlang.org/"
@@ -106,9 +99,7 @@ export default function Home() {
         </Typography>
 
         <Typography variant="h5" component="p" className={classes.description}>
-          Get started by editing
-          {' '}
-          <code>pages/index.tsx</code>
+          Get started by editing <code>pages/index.tsx</code>
         </Typography>
 
         <Box
@@ -172,9 +163,8 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by
-          {' '}
-          <img src="/vercel.svg" alt="Vercel Logo" />
+          Powered by{' '}
+          <Image src="/vercel.svg" alt="Vercel Logo" width={70} height={70} />
         </a>
       </Box>
     </Box>
