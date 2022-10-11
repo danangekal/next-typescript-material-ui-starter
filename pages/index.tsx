@@ -1,71 +1,9 @@
 import Image from 'next/image';
-import { makeStyles, Theme, Box, Typography } from '@material-ui/core';
+import { Box, Typography } from '@mui/material';
 
 import Nav from 'components/nav';
 
-const useStyles = makeStyles((theme: Theme) => ({
-  title: {
-    textAlign: 'center',
-    '& a': {
-      color: '#0070f3',
-      textDecoration: 'none',
-    },
-    '& a:hover, & a:focus, & a:active': {
-      textDecoration: 'underline',
-    },
-  },
-  description: {
-    textAlign: 'center',
-    '& code': {
-      background: '#fafafa',
-      borderRadius: '5px',
-      padding: '0.25rem',
-    },
-  },
-  grid: {
-    [theme.breakpoints.down('sm')]: {
-      width: '100%',
-    },
-    '& a': {
-      margin: '1rem',
-      padding: '1.5rem',
-      width: '300px',
-      flexGrow: '1',
-      flexShrink: '0',
-      textAlign: 'left',
-      color: 'inherit',
-      textDecoration: 'none',
-      border: '1px solid #eaeaea',
-      borderRadius: '10px',
-      transition: 'color 0.15s ease, border-color 0.15s ease',
-    },
-    '& a:hover, a:focus, a:active': {
-      color: '#0070f3',
-      borderColor: '#0070f3',
-    },
-    '& h3': {
-      margin: '0 0 1rem 0',
-      fontSize: '1.5rem',
-    },
-    '& p': {
-      margin: '0',
-      fontSize: '1.25rem',
-      lineHeight: '1.5',
-    },
-  },
-  footer: {
-    '& a': {
-      color: 'inherit',
-      textDecoration: 'none',
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-    },
-  },
-}));
-
 export default function Home() {
-  const classes = useStyles();
   return (
     <Box
       minHeight="100vh"
@@ -85,7 +23,20 @@ export default function Home() {
         justifyContent="center"
         alignItems="center"
       >
-        <Typography variant="h2" component="h1" className={classes.title}>
+        <Typography
+          variant="h2"
+          component="h1"
+          sx={{
+            textAlign: 'center',
+            '& a': {
+              color: '#0070f3',
+              textDecoration: 'none',
+            },
+            '& a:hover, & a:focus, & a:active': {
+              textDecoration: 'underline',
+            },
+          }}
+        >
           Welcome to <a href="https://nextjs.org">Next.js</a>
           {' + '}
           <a
@@ -98,7 +49,18 @@ export default function Home() {
           <a href="https://material-ui.com">Material UI!</a>
         </Typography>
 
-        <Typography variant="h5" component="p" className={classes.description}>
+        <Typography
+          variant="h5"
+          component="p"
+          sx={{
+            textAlign: 'center',
+            '& code': {
+              background: '#fafafa',
+              borderRadius: '5px',
+              padding: '0.25rem',
+            },
+          }}
+        >
           Get started by editing <code>pages/index.tsx</code>
         </Typography>
 
@@ -109,7 +71,37 @@ export default function Home() {
           justifyContent="center"
           alignItems="center"
           flexWrap="wrap"
-          className={classes.grid}
+          sx={(theme) => ({
+            [theme.breakpoints.down('sm')]: {
+              width: '100%',
+            },
+            '& a': {
+              margin: '1rem',
+              padding: '1.5rem',
+              width: '300px',
+              flexGrow: '1',
+              flexShrink: '0',
+              textAlign: 'left',
+              color: 'inherit',
+              textDecoration: 'none',
+              border: '1px solid #eaeaea',
+              borderRadius: '10px',
+              transition: 'color 0.15s ease, border-color 0.15s ease',
+            },
+            '& a:hover, a:focus, a:active': {
+              color: '#0070f3',
+              borderColor: '#0070f3',
+            },
+            '& h3': {
+              margin: '0 0 1rem 0',
+              fontSize: '1.5rem',
+            },
+            '& p': {
+              margin: '0',
+              fontSize: '1.25rem',
+              lineHeight: '1.5',
+            },
+          })}
         >
           <a href="https://nextjs.org/docs">
             <Typography variant="h4" component="h3">
@@ -156,7 +148,15 @@ export default function Home() {
         display="flex"
         justifyContent="center"
         alignItems="center"
-        className={classes.footer}
+        sx={{
+          '& a': {
+            color: 'inherit',
+            textDecoration: 'none',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          },
+        }}
       >
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
