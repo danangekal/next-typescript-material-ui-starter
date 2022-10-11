@@ -1,24 +1,29 @@
-import { useEffect } from 'react';
 import { AppProps /* , AppContext */ } from 'next/app';
-import { ThemeProvider, CssBaseline } from '@material-ui/core';
+import { CacheProvider, EmotionCache } from '@emotion/react';
+import { ThemeProvider, CssBaseline } from '@mui/material';
 
 import theme from 'components/theme';
+import createEmotionCache from 'utility/createEmotionCache';
 
-function App({ Component, pageProps }: AppProps) {
-  useEffect(() => {
-    const jssStyles: any = document.querySelector('#jss-server-side');
-    if (jssStyles) {
-      jssStyles.parentElement.removeChild(jssStyles);
-    }
-  }, []);
+// Client-side cache, shared for the whole session of the user in the browser.
+const clientSideEmotionCache = createEmotionCache();
 
+interface MyAppProps extends AppProps {
+  emotionCache?: EmotionCache;
+}
+
+function MyApp({
+  Component,
+  emotionCache = clientSideEmotionCache,
+  pageProps,
+}: MyAppProps) {
   return (
-    <>
+    <CacheProvider value={emotionCache}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <Component {...pageProps} />
       </ThemeProvider>
-    </>
+    </CacheProvider>
   );
 }
 
@@ -30,8 +35,7 @@ function App({ Component, pageProps }: AppProps) {
 // App.getInitialProps = async (appContext: AppContext) => {
 //   // calls page's `getInitialProps` and fills `appProps.pageProps`
 //   const appProps = await App.getInitialProps(appContext);
-
 //   return { ...appProps }
 // }
 
-export default App;
+export default MyApp;
