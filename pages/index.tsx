@@ -1,7 +1,10 @@
 import Image from 'next/image';
+import { Inter } from 'next/font/google';
 import { Box, Typography } from '@mui/material';
 
-import Nav from 'components/nav';
+import Nav from '@/components/nav';
+
+const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
   return (
@@ -12,6 +15,7 @@ export default function Home() {
       flexDirection="column"
       justifyContent="center"
       alignItems="center"
+      className={inter.className}
     >
       <Nav />
 
