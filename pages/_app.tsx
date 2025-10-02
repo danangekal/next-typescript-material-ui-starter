@@ -1,6 +1,6 @@
-import { AppProps /* , AppContext */ } from 'next/app';
-import { CacheProvider, EmotionCache } from '@emotion/react';
-import { ThemeProvider, CssBaseline } from '@mui/material';
+import { CacheProvider, type EmotionCache } from '@emotion/react';
+import { CssBaseline, ThemeProvider } from '@mui/material';
+import type { AppProps } from 'next/app';
 
 import theme from '@/components/theme';
 import createEmotionCache from '@/utility/createEmotionCache';

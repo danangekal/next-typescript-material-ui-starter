@@ -6,39 +6,42 @@ You can check [demo](https://next-typescript-material-ui-starter.vercel.app/)
 
 ## Features
 
-- [React.js 18](https://reactjs.org/blog/2022/03/29/react-v18.html) - Blog introduce react v18.0.
-- [Next.js 13](https://nextjs.org/blog/next-13) - Blog introduce next.js 13.
-- [Typescript 5](https://www.typescriptlang.org/) - Documentation of typescript.
-- [Next PWA 5](https://www.npmjs.com/package/next-pwa) - Documentation of next pwa.
-- [Material UI 5](https://mui.com/material-ui/getting-started/overview/) - Documentation of material ui.
-- [Docker](https://docs.docker.com/) - Documentation of Docker.
-- [Eslint 8](https://eslint.org/docs/user-guide/getting-started) - Documentation of eslint.
-- [Prettier 3](https://prettier.io/docs/en/index.html) - Documentation of prettier.
-- [Husky 8](https://typicode.github.io/husky/#/) - Documentation of husky.
-- [Lint Staged 14](https://github.com/okonet/lint-staged) - Documentation of lint staged.
+- [React.js 19](https://react.dev/blog/2024/12/05/react-19) - Latest React with improved performance
+- [Next.js 15](https://nextjs.org/blog/next-15) - Latest Next.js with React 19 support
+- [TypeScript 5](https://www.typescriptlang.org/) - Strict type checking
+- [Material UI 6](https://mui.com/material-ui/getting-started/) - Modern Material Design components
+- [Biome](https://biomejs.dev/) - Fast linter and formatter (replaces ESLint + Prettier)
+- [Serwist](https://serwist.pages.dev/) - Modern PWA framework with advanced caching
+- [Docker](https://docs.docker.com/) - Multi-stage optimized builds
+- [Husky 9](https://typicode.github.io/husky/) - Git hooks with simplified setup
+- [Lint Staged 15](https://github.com/okonet/lint-staged) - Run linters on staged files
+
+## Requirements
+
+- Node.js >= 22.0.0
+- pnpm >= 9.0.0
 
 ## Usage
-
-This project using node >= 16.14 & yarn 1.22.19
 
 ### Installation
 
 ```bash
 git clone https://github.com/danangekal/next-typescript-material-ui-starter.git
-yarn install
+cd next-typescript-material-ui-starter
+pnpm install
 ```
 
-#### Development
+### Development
 
 ```bash
-yarn dev
+pnpm dev
 ```
 
-#### Production
+### Production
 
 ```bash
-npm run build or yarn build
-yarn start
+pnpm build
+pnpm start
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.

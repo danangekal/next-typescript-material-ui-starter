@@ -19,47 +19,45 @@
     "material-ui",
     "docker",
     "pwa",
-    "eslint",
-    "prettier",
+    "biome",
     "husky",
     "lint-staged"
   ],
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "telemetry": "next telemetry",
-    "lint": "next lint",
-    "format": "prettier --ignore-path .gitignore \"**/*.+(js|ts|tsx|css|scss)\" --write",
-    "prepare": "husky install",
-    "prepublishOnly": "pinst --disable",
-    "postpublish": "pinst --enable"
+    "lint": "biome lint .",
+    "lint:fix": "biome check --write .",
+    "format": "biome format --write .",
+    "check": "biome check --write .",
+    "prepare": "husky"
   },
   "dependencies": {
-    "@emotion/cache": "^11.11.0",
-    "@emotion/react": "^11.11.1",
+    "@emotion/cache": "^11.14.0",
+    "@emotion/react": "^11.14.0",
     "@emotion/server": "^11.11.0",
-    "@emotion/styled": "^11.11.0",
-    "@mui/material": "^5.14.13",
-    "next": "^13.5.4",
-    "next-pwa": "^5.6.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "@emotion/styled": "^11.14.1",
+    "@mui/material": "^7.3.3",
+    "@serwist/next": "^9.2.1",
+    "next": "^15.5.4",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
   },
   "devDependencies": {
-    "@types/node": "^20.8.6",
-    "@types/react": "^18.2.28",
-    "@types/react-dom": "^18.2.13",
-    "eslint": "^8.51.0",
-    "eslint-config-next": "^13.5.4",
-    "eslint-config-prettier": "^9.0.0",
-    "husky": "^8.0.3",
-    "lint-staged": "^15.0.0",
-    "pinst": "^3.0.0",
-    "prettier": "^3.0.3",
-    "typescript": "^5.2.2"
+    "@biomejs/biome": "^2.2.4",
+    "@types/node": "^24.6.2",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.3",
+    "serwist": "^9.2.1",
+    "typescript": "^5.9.3"
   },
   "engines": {
-    "node": ">=14.19.2"
-  }
+    "node": ">=22.0.0",
+    "pnpm": ">=9.0.0"
+  },
+  "packageManager": "pnpm@10.0.0+sha512.b8fef5494bd3fe4cbd4edabd0745df2ee5be3e4b0b8b08fa643aa3e4c6702ccc0f00d68fa8a8c9858a735a0032485a44990ed2810526c875e416f001b17df12b"
 }
