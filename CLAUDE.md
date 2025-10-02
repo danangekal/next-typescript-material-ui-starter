@@ -75,4 +75,4 @@ Pre-commit hooks (Husky + lint-staged):
 
 ## Requirements
 - **Node.js**: >= 22.0.0
-- **pnpm**: >= 10.0.0 (enforced via `packageManager` field in package.json)
+- **pnpm**: >= 9.0.0 (enforced via `packageManager` field in package.json)
