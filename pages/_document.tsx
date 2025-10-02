@@ -1,20 +1,25 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document';
 import createEmotionServer from '@emotion/server/create-instance';
+import Document, {
+  type DocumentContext,
+  type DocumentInitialProps,
+  Head,
+  Html,
+  Main,
+  NextScript,
+} from 'next/document';
+import type { ReactElement } from 'react';
 
 import createEmotionCache from '@/utility/createEmotionCache';
 
-class MyDocument extends Document {
+interface MyDocumentProps extends DocumentInitialProps {
+  emotionStyleTags: ReactElement[];
+}
+
+class MyDocument extends Document<MyDocumentProps> {
   render() {
     return (
       <Html lang="en">
-        <Head>
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-          />
-          <meta name="emotion-insertion-point" content="" />
-          {(this.props as any).emotionStyleTags}
-        </Head>
+        <Head>{this.props.emotionStyleTags}</Head>
         <body>
           <Main />
           <NextScript />
@@ -26,29 +31,9 @@ class MyDocument extends Document {
 
 // `getInitialProps` belongs to `_document` (instead of `_app`),
 // it's compatible with static-site generation (SSG).
-MyDocument.getInitialProps = async (ctx) => {
-  // Resolution order
-  //
-  // On the server:
-  // 1. app.getInitialProps
-  // 2. page.getInitialProps
-  // 3. document.getInitialProps
-  // 4. app.render
-  // 5. page.render
-  // 6. document.render
-  //
-  // On the server with error:
-  // 1. document.getInitialProps
-  // 2. app.render
-  // 3. page.render
-  // 4. document.render
-  //
-  // On the client
-  // 1. app.getInitialProps
-  // 2. page.getInitialProps
-  // 3. app.render
-  // 4. page.render
-
+MyDocument.getInitialProps = async (
+  ctx: DocumentContext,
+): Promise<MyDocumentProps> => {
   const originalRenderPage = ctx.renderPage;
 
   // You can consider sharing the same Emotion cache between all the SSR requests to speed up performance.
@@ -58,6 +43,7 @@ MyDocument.getInitialProps = async (ctx) => {
 
   ctx.renderPage = () =>
     originalRenderPage({
+      // biome-ignore lint/suspicious/noExplicitAny: Required for Emotion SSR type compatibility
       enhanceApp: (App: any) =>
         function EnhanceApp(props) {
           return <App emotionCache={cache} {...props} />;
@@ -72,7 +58,6 @@ MyDocument.getInitialProps = async (ctx) => {
     <style
       data-emotion={`${style.key} ${style.ids.join(' ')}`}
       key={style.key}
-      // eslint-disable-next-line react/no-danger
       dangerouslySetInnerHTML={{ __html: style.css }}
     />
   ));

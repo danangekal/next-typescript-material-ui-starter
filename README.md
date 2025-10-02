@@ -6,42 +6,71 @@ You can check [demo](https://next-typescript-material-ui-starter.vercel.app/)
 
 ## Features
 
-- [React.js 18](https://reactjs.org/blog/2022/03/29/react-v18.html) - Blog introduce react v18.0.
-- [Next.js 13](https://nextjs.org/blog/next-13) - Blog introduce next.js 13.
-- [Typescript 5](https://www.typescriptlang.org/) - Documentation of typescript.
-- [Next PWA 5](https://www.npmjs.com/package/next-pwa) - Documentation of next pwa.
-- [Material UI 5](https://mui.com/material-ui/getting-started/overview/) - Documentation of material ui.
-- [Docker](https://docs.docker.com/) - Documentation of Docker.
-- [Eslint 8](https://eslint.org/docs/user-guide/getting-started) - Documentation of eslint.
-- [Prettier 3](https://prettier.io/docs/en/index.html) - Documentation of prettier.
-- [Husky 8](https://typicode.github.io/husky/#/) - Documentation of husky.
-- [Lint Staged 14](https://github.com/okonet/lint-staged) - Documentation of lint staged.
+- [React.js 19](https://react.dev/blog/2024/12/05/react-19) - Latest React with improved performance
+- [Next.js 15](https://nextjs.org/blog/next-15) - Latest Next.js with Turbopack and React 19 support
+- [TypeScript 5](https://www.typescriptlang.org/) - Strict type checking with latest features
+- [Material UI 7](https://mui.com/material-ui/getting-started/) - Latest Material Design components
+- [Biome](https://biomejs.dev/) - Fast linter and formatter (replaces ESLint + Prettier)
+- [Serwist 9](https://serwist.pages.dev/) - Modern PWA framework with advanced caching strategies
+- [Docker](https://docs.docker.com/) - Multi-stage optimized builds with Node.js 22
+- [Husky 9](https://typicode.github.io/husky/) - Git hooks with simplified setup
+- [Lint Staged 16](https://github.com/okonet/lint-staged) - Run linters on staged files
+
+## Requirements
+
+- Node.js >= 22.0.0
+- pnpm >= 9.0.0
 
 ## Usage
-
-This project using node >= 16.14 & yarn 1.22.19
 
 ### Installation
 
 ```bash
 git clone https://github.com/danangekal/next-typescript-material-ui-starter.git
-yarn install
+cd next-typescript-material-ui-starter
+pnpm install
 ```
 
-#### Development
+### Development
 
 ```bash
-yarn dev
+pnpm dev
 ```
 
-#### Production
+### Production
 
 ```bash
-npm run build or yarn build
-yarn start
+pnpm build
+pnpm start
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+### Code Quality
+
+```bash
+pnpm lint         # Run Biome linter (check only)
+pnpm lint:fix     # Run Biome and auto-fix issues
+pnpm format       # Format code with Biome
+pnpm check        # Run Biome check and auto-fix (linting + formatting)
+```
+
+### Docker
+
+```bash
+# Build Docker image
+docker build -t next-typescript-material-ui-starter .
+
+# Run Docker container
+docker run --rm -it -p 3000:3000 next-typescript-material-ui-starter
+```
+
+The Docker setup uses:
+- Multi-stage build for optimized image size
+- Node.js 22 Alpine for minimal footprint
+- Non-root user for security
+- pnpm for fast, efficient package management
+- Next.js standalone output mode
 
 You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
