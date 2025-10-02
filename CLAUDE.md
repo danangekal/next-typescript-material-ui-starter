@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Next.js 15 + React 19 + TypeScript 5 + Material UI 6 starter template with PWA support, configured with strict TypeScript settings, Biome for linting/formatting, and Husky pre-commit hooks.
+Next.js 15 + React 19 + TypeScript 5 + Material UI 7 starter template with PWA support, configured with strict TypeScript settings, Biome for linting/formatting, and Husky pre-commit hooks.
 
 ## Common Commands
 
@@ -32,13 +32,14 @@ Next.js 15 + React 19 + TypeScript 5 + Material UI 6 starter template with PWA s
 ## Architecture
 
 ### Emotion Cache Setup (Critical for SSR)
-The project uses Emotion for CSS-in-JS with Material UI. The integration requires careful setup:
+The project uses Emotion for CSS-in-JS with Material UI. The integration requires careful setup to avoid hydration mismatches:
 
-1. **Client-side cache** (`utility/createEmotionCache.ts`): Creates Emotion cache with `key: 'mui-style'` and insertion point from meta tag
+1. **Client-side cache** (`utility/createEmotionCache.ts`): Creates Emotion cache with `key: 'css'` and `prepend: true` for proper style ordering
 2. **_app.tsx**: Wraps app with `CacheProvider` → `ThemeProvider` → `CssBaseline`
 3. **_document.tsx**: Server-side rendering extracts critical CSS chunks using `createEmotionServer` and injects them as style tags to prevent FOUC
+4. **Theme configuration** (`components/theme.ts`): CSS variables are disabled (`cssVariables: false`) to prevent `ThemeProviderNoVars` hydration warnings with MUI v7
 
-When modifying styling infrastructure, maintain this SSR flow to avoid hydration mismatches.
+**Important**: Never wrap `<Head>` component inside other HTML elements (like `<nav>`) as it causes hydration mismatches. `<Head>` contents are hoisted to document `<head>` while wrappers stay in body.
 
 ### Path Aliases
 TypeScript configured with `@/*` alias mapping to project root (tsconfig.json paths). Use `@/components/...`, `@/utility/...`, etc.
@@ -74,5 +75,4 @@ Pre-commit hooks (Husky + lint-staged):
 
 ## Requirements
 - **Node.js**: >= 22.0.0
-- **pnpm**: >= 9.0.0
-- Package manager is enforced via `packageManager` field in package.json
+- **pnpm**: >= 10.0.0 (enforced via `packageManager` field in package.json)

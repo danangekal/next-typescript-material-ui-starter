@@ -7,19 +7,19 @@ You can check [demo](https://next-typescript-material-ui-starter.vercel.app/)
 ## Features
 
 - [React.js 19](https://react.dev/blog/2024/12/05/react-19) - Latest React with improved performance
-- [Next.js 15](https://nextjs.org/blog/next-15) - Latest Next.js with React 19 support
-- [TypeScript 5](https://www.typescriptlang.org/) - Strict type checking
-- [Material UI 6](https://mui.com/material-ui/getting-started/) - Modern Material Design components
+- [Next.js 15](https://nextjs.org/blog/next-15) - Latest Next.js with Turbopack and React 19 support
+- [TypeScript 5](https://www.typescriptlang.org/) - Strict type checking with latest features
+- [Material UI 7](https://mui.com/material-ui/getting-started/) - Latest Material Design components
 - [Biome](https://biomejs.dev/) - Fast linter and formatter (replaces ESLint + Prettier)
-- [Serwist](https://serwist.pages.dev/) - Modern PWA framework with advanced caching
-- [Docker](https://docs.docker.com/) - Multi-stage optimized builds
+- [Serwist 9](https://serwist.pages.dev/) - Modern PWA framework with advanced caching strategies
+- [Docker](https://docs.docker.com/) - Multi-stage optimized builds with Node.js 22
 - [Husky 9](https://typicode.github.io/husky/) - Git hooks with simplified setup
-- [Lint Staged 15](https://github.com/okonet/lint-staged) - Run linters on staged files
+- [Lint Staged 16](https://github.com/okonet/lint-staged) - Run linters on staged files
 
 ## Requirements
 
 - Node.js >= 22.0.0
-- pnpm >= 9.0.0
+- pnpm >= 10.0.0
 
 ## Usage
 
@@ -45,6 +45,32 @@ pnpm start
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+### Code Quality
+
+```bash
+pnpm lint         # Run Biome linter (check only)
+pnpm lint:fix     # Run Biome and auto-fix issues
+pnpm format       # Format code with Biome
+pnpm check        # Run Biome check and auto-fix (linting + formatting)
+```
+
+### Docker
+
+```bash
+# Build Docker image
+docker build -t next-typescript-material-ui-starter .
+
+# Run Docker container
+docker run --rm -it -p 3000:3000 next-typescript-material-ui-starter
+```
+
+The Docker setup uses:
+- Multi-stage build for optimized image size
+- Node.js 22 Alpine for minimal footprint
+- Non-root user for security
+- pnpm for fast, efficient package management
+- Next.js standalone output mode
 
 You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
