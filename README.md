@@ -13,6 +13,7 @@ You can check [demo](https://next-typescript-material-ui-starter.vercel.app/)
 - [Biome](https://biomejs.dev/) - Fast linter and formatter (replaces ESLint + Prettier)
 - [Serwist 9](https://serwist.pages.dev/) - Modern PWA framework with advanced caching strategies
 - [Docker](https://docs.docker.com/) - Multi-stage optimized builds with Node.js 22
+- [GitHub Actions](https://github.com/features/actions) - CI/CD pipeline with lint, build, and Docker deployment
 - [Husky 9](https://typicode.github.io/husky/) - Git hooks with simplified setup
 - [Lint Staged 16](https://github.com/okonet/lint-staged) - Run linters on staged files
 

@@ -25,9 +25,12 @@ Next.js 15 + React 19 + TypeScript 5 + Material UI 7 starter template with PWA s
 - Multi-stage build with pnpm, Node.js 22, and non-root user for security
 
 ### CI/CD
-- **CI Workflow**: Runs on push/PR to main - linting, type-checking, and building
-- **Docker Workflow**: Builds and pushes Docker image to Docker Hub
-- Uses pnpm v9, Node.js 22, and Biome for fast, reliable builds
+- **CI/CD Pipeline**: GitHub Actions workflow with 3 jobs:
+  1. `lint-and-check`: Runs Biome linting and TypeScript type checking
+  2. `build`: Builds the Next.js application (runs after linting passes)
+  3. `docker`: Builds and pushes Docker image to Docker Hub (only on main branch pushes)
+- Uses pnpm v10, Node.js 22, and Biome for fast, reliable builds
+- Docker job only runs after successful build on main branch commits
 
 ## Architecture
 
